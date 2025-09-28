@@ -19,7 +19,10 @@ async def synthesize_speech(text: str = Form(...)):
         endpoint=Config.AZURE_SPEECH_ENDPOINT
     )
 
-    output_filename = f"{uuid.uuid4()}.wav"
+
+    os.makedirs("files", exist_ok=True)
+
+    output_filename = f"files/{uuid.uuid4()}.wav"
     audio_config = speechsdk.audio.AudioOutputConfig(filename=output_filename)
     synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config, audio_config=audio_config)
 

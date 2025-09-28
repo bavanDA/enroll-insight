@@ -23,7 +23,9 @@ def save_temp_file(upload_file: UploadFile) -> str:
     """
     Saves an uploaded file to a temporary location and returns the file path.
     """
-    temp_filename = f"{uuid.uuid4()}.wav"
+    os.makedirs("files", exist_ok=True)
+    temp_filename = f"files/{uuid.uuid4()}.wav"
+
     with open(temp_filename, "wb") as f:
         f.write(upload_file.file.read())
     return temp_filename
