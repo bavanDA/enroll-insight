@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+httpx
+pydantic
+motor
+pymongo[srv]
+python-dotenv
+pandas
+google-genai
+azure-cognitiveservices-speech
+python-multipart
