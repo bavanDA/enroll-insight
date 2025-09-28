@@ -26,6 +26,11 @@ Enroll Insight is an accessibility focused application that utilizes speech to t
 - **Database**: MongoDB for storing synced NJIT course data
 - **Course Sync**: Custom API client that fetches latest courses from NJIT and syncs them to MongoDB
 
+
+## 📥 Installation & Setup
+
+For detailed setup instructions, see the [INSTALLATION](INSTALLATION.md) guide.
+
 ## 🚧 Challenges We Faced
 
 - Gemini was inconsistent: ignored instructions and often repeated recommendations
