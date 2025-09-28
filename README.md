@@ -1,6 +1,6 @@
 # 📚 Accessible Voice-Based Course Advisor
 
-A voice-navigated chatbot that helps students — especially from the disability community — find and register for required university courses quickly, easily, and entirely through speech.
+A voice-navigated chatbot that helps students, especially from the disability community, find and register for required university courses quickly, easily, and entirely through speech.
 
 ## 💡 Inspiration
 
@@ -54,6 +54,6 @@ We learned how to use multiple new technologies during the course of this projec
 - Add support for other GenAI APIs like Copilot, ChatGPT, Claude, and Grok
 - Add features such as calendar syncing and waitlist alerts
 
-## 📅 Date
+## License
 
-September 28, 2025
+This project is licensed under the [MIT License](LICENSE).
