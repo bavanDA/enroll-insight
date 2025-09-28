@@ -42,7 +42,7 @@ Enroll Insight is an accessibility focused application that utilizes speech to t
 
 We learned how to use multiple new technologies during the course of this project. 
 
-- how to utilize Microsoft Azure's speech resources to integrate text tp speech into the project
+- how to utilize Microsoft Azure's speech resources to integrate text to speech/speech to text into the project
 - how to tailor prompts for Google Gemini in order to get the most accurate results
 - how to create a backend using FastAPI and Python and a frontend using React
 
