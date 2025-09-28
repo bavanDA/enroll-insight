@@ -1,64 +1,30 @@
-# 📚 Accessible Voice-Based Course Advisor
+# Enroll Insight
 
-A voice-navigated chatbot that helps students, especially from the disability community, find and register for required university courses quickly, easily, and entirely through speech.
+A voice course advisor for NJIT computer science students. You talk to it, it asks about your year, when you like to take classes and what you want to work on after graduating, then it recommends courses and reads the answer back to you.
 
-## 💡 Inspiration
+We built it in 24 hours at a hackathon. Course registration is a lot of small text, tables and clicking, which is hard for students with visual, motor or learning disabilities, so everything here works by voice.
 
-Course registration is often overwhelming, visually demanding, and difficult to navigate, especially for students with visual, motor, or learning disabilities. We wanted to create a tool that empowers these student by making the process fully accessible through conversational voice interactions.
+## How it works
 
-## 🧠 What It Does
+1. The browser records your voice and sends it to the server. Azure Speech turns it into text.
+2. The server keeps the conversation for your session and asks the follow up questions it still needs.
+3. Gemini picks courses from NJIT's BS in Computer Science curriculum and the course list we loaded into MongoDB.
+4. The server tracks what it already recommended and tells Gemini to skip those. Gemini kept suggesting the same course again without it.
+5. Azure Speech reads the answer out loud.
 
-Enroll Insight is an accessibility focused application that utilizes speech to text and text to speech technologies alongside an AI assistant to make course registration/schedule creation at NJIT more inclusive.
+How the prompts are set up is in [Prompting.md](Prompting.md).
 
-- Accepts voice input from the user
-- Asks follow-up questions about academic year, time preferences, and career goals
-- Recommends personalized courses
-- Responds via voice using text-to-speech
-- Avoids recommending the same course more than once
-- Keeps context using session tracking
+## Stack
 
-## 🛠️ How We Built It
+React, Tailwind CSS, FastAPI, MongoDB, Azure Speech (speech to text and text to speech), Gemini.
 
-- **Frontend**: React + Tailwind CSS
-- **Speech Processing**: Azure Cognitive Speech Services (STT + TTS)
-- **Backend**: FastAPI + Python
-- **AI Chat Layer**: Gemini AI (Google GenAI)
-- **Database**: MongoDB for storing synced NJIT course data
-- **Course Sync**: Custom API client that fetches latest courses from NJIT and syncs them to MongoDB
+## Run it
 
+Setup is in [INSTALLATION.md](INSTALLATION.md). You need a Gemini API key, an Azure Speech key and MongoDB.
 
-## 📥 Installation & Setup
+## Limits
 
-For detailed setup instructions, see the [INSTALLATION](INSTALLATION.md) guide.
+- Only undergraduate computer science for now.
+- No accounts, so recommendations are not saved between visits.
 
-## 🚧 Challenges We Faced
-
-- Gemini was inconsistent: ignored instructions and often repeated recommendations
-- Prompt tuning required many iterations
-- We had to build a recommendation tracker to prevent duplicates
-
-## 🏆 Accomplishments
-
-- Built a full accessibility-focused tool in **under 24 hours**
-- Created real-time voice-first UX
-- Improved accessibility and inclusion for a real use case
-
-## 🎓 What we learned
-
-We learned how to use multiple new technologies during the course of this project. 
-
-- how to utilize Microsoft Azure's speech resources to integrate text to speech/speech to text into the project
-- how to tailor prompts for Google Gemini in order to get the most accurate results
-- how to create a backend using FastAPI and Python and a frontend using React
-
-## 🔮 What’s Next
-
-- Improve UI/UX based on feedback from disabled students
-- Add support for other majors (currently only supports Computer Science)
-- Integrate authentication for personalized recommendations
-- Add support for other GenAI APIs like Copilot, ChatGPT, Claude, and Grok
-- Add features such as calendar syncing and waitlist alerts
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+MIT license.
