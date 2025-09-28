@@ -423,7 +423,7 @@ const Chat: React.FC = () => {
     <div className="max-w-4xl mx-auto p-6">
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-3xl font-bold text-center text-blue-800">🎓 NJIT Course Advisor</h1>
+        <h1 className="text-3xl font-bold text-center text-blue-800">🎓 Enroll Insight: NJIT Course Advisor</h1>
         <div className="flex gap-2">
           <button
             onClick={() => setAutoPlaySpeech(!autoPlaySpeech)}
